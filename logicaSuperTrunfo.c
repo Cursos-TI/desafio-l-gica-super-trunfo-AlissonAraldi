@@ -298,8 +298,8 @@ int main() {
         //limpando a tela
         system("clear");
 
-        printf("*********VAMOS JOGAR**********\n");
-        printf("***Apresento as suas Cartas***\n\n");
+        printf("********VAMOS JOGAR********\n");
+        printf("***Apresento a sua Carta***\n\n");
         printf("PAÍS: %s - %s\n", pais1, Aestado);
         printf("1. Carta A1 - Cidade: %s \n\tPopulação: %ld \tÁrea: %ld  \tPIB: %.2f  \tPontos T.: %d \tDensidade: %.2f \tPer Capita: %.2f\n", A1cidade, A1popul, A1area, A1pib, A1turist, A1dens, A1pcap);
         printf("2. Carta A2 - Cidade: %s \n\tPopulação: %ld \tÁrea: %ld  \tPIB: %.2f  \tPontos T.: %d \tDensidade: %.2f \tPer Capita: %.2f\n", A2cidade, A2popul, A2area, A2pib, A2turist, A2dens, A2pcap);
