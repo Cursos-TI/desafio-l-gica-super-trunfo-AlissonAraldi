@@ -1970,6 +1970,14 @@ int main() {
             float *Jpcap[4] = {&A1pcap, &A2pcap, &A3pcap, &A4pcap};
             float *Jsup[4] = {&A1sup, &A2sup, &A3sup, &A4sup};
         
+            *Jcidades = Jcarta -1;
+            *Jturist = Jcarta -1;
+            *Jpopul = Jcarta -1;  
+            *Jarea = Jcarta -1;   
+            *Jpib = Jcarta -1;   
+            *Jdens = Jcarta -1;  
+            *Jpcap = Jcarta -1;  
+            *Jsup = Jcarta -1;   
             void **Jdecisao[7] = {(void **)Jturist, (void **)Jpopul, (void **)Jarea, (void **)Jpib, (void **)Jdens, (void **)Jpcap, (void **)Jsup};
 
             char *Mcidades[4] = {&B1cidade, &B2cidade, &B3cidade, &B4cidade};
@@ -1981,29 +1989,35 @@ int main() {
             float *Mpcap[4] = {&B1pcap, &B2pcap, &B3pcap, &B4pcap};
             float *Msup[4] = {&B1sup, &B2sup, &B3sup, &B4sup};
 
+            *Mcidades = Mcarta -1;
+            *Mturist = Mcarta -1;
+            *Mpopul = Mcarta -1;  
+            *Marea = Mcarta -1;   
+            *Mpib = Mcarta -1;   
+            *Mdens = Mcarta -1;  
+            *Mpcap = Mcarta -1;  
+            *Msup = Mcarta -1; 
             void **Mdecisao[7] = {(void **)Mturist, (void **)Mpopul, (void **)Marea, (void **)Mpib, (void **)Mdens, (void **)Mpcap, (void **)Msup};
             char opcoes[6][30] = {"Populacão", "Área", "PIB", "Pontos Turisticos", "Densidade", "Renda Per Capta"};
 
 
+            printf("\nCarta A%d - Cidade: %s\n ", Jcarta, Jcidades[Jcarta]);
+            printf("Turistas: %d\n", *Jturist[Jcarta]);
+            printf("População: %ld\n", *Jpopul[Jcarta]);
+            printf("Área: %ld\n", *Jarea[Jcarta]);
+            printf("PIB: %.2f\n", *Jpib[Jcarta]);
+            printf("Densidade: %.2f\n", *Jdens[Jcarta]);
+            printf("PIB per capita: %.2f\n", *Jpcap[Jcarta]);
+            printf("Suporte: %.2f\n\n\n\n\n", *Jsup[Jcarta]);
 
-
-            // printf("\nCarta A%d - Cidade: %s\n ", Jcarta, Jcidades[Jcarta]);
-            // printf("Turistas: %d\n", *Jturist[Jcarta]);
-            // printf("População: %ld\n", *Jpopul[Jcarta]);
-            // printf("Área: %ld\n", *Jarea[Jcarta]);
-            // printf("PIB: %.2f\n", *Jpib[Jcarta]);
-            // printf("Densidade: %.2f\n", *Jdens[Jcarta]);
-            // printf("PIB per capita: %.2f\n", *Jpcap[Jcarta]);
-            // printf("Suporte: %.2f\n\n\n\n\n", *Jsup[Jcarta]);
-
-            // printf("\nCarta B%d - Cidade: %s\n ", Mcarta, Mcidades[Mcarta]);
-            // printf("Turistas: %d\n", *Mturist[Mcarta]);
-            // printf("População: %ld\n", *Mpopul[Mcarta]);
-            // printf("Área: %ld\n", *Marea[Mcarta]);
-            // printf("PIB: %.2f\n", *Mpib[Mcarta]);
-            // printf("Densidade: %.2f\n", *Mdens[Mcarta]);
-            // printf("PIB per capita: %.2f\n", *Mpcap[Mcarta]);
-            // printf("Suporte: %.2f\n\n\n\n\n", *Msup[Mcarta]);
+            printf("\nCarta B%d - Cidade: %s\n ", Mcarta, Mcidades[Mcarta]);
+            printf("Turistas: %d\n", *Mturist[Mcarta]);
+            printf("População: %ld\n", *Mpopul[Mcarta]);
+            printf("Área: %ld\n", *Marea[Mcarta]);
+            printf("PIB: %.2f\n", *Mpib[Mcarta]);
+            printf("Densidade: %.2f\n", *Mdens[Mcarta]);
+            printf("PIB per capita: %.2f\n", *Mpcap[Mcarta]);
+            printf("Suporte: %.2f\n\n\n\n\n", *Msup[Mcarta]);
         
        
        
@@ -2018,21 +2032,21 @@ int main() {
             printf("\n\t****** Jogador x Máquina ******\n");
             printf("%s - Carta A%d x Carta B%d - %s\n", Jcidades[Jcarta -1], Jcarta, Mcarta,Mcidades[Mcarta]);
 
-            void **Jdecisao2 = {(void **)Jdecisao[atrib1]};
-            void **Mdecisao2 = {(void **)Mdecisao[atrib1]};
+            // void **Jdecisao2 = {(void **)Jdecisao[atrib1]};
+            // void **Mdecisao2 = {(void **)Mdecisao[atrib1]};
 
-            if(atrib1 == 4 ){
-                //atributo 1 - Densidade
-                if (Jdecisao2 < Mdecisao2) {
-                    printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib1], Jcarta, Mcarta);
-                    jogador ++;
-                } else if (Jdecisao2 > Mdecisao2) {
-                    printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib1], Jcarta, Mcarta);
-                    maquina ++;
-                } else {
-                    printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib1], Jcarta, Mcarta);
-                        }
-            }//else {
+            // if(atrib1 == 4 ){
+            //     //atributo 1 - Densidade
+            //     if (Jdecisao2 < Mdecisao2) {
+            //         printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib1], Jcarta, Mcarta);
+            //         jogador ++;
+            //     } else if (Jdecisao2 > Mdecisao2) {
+            //         printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib1], Jcarta, Mcarta);
+            //         maquina ++;
+            //     } else {
+            //         printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib1], Jcarta, Mcarta);
+            //             }
+            // }//else {
             //     //Atributo 1 - Demais
             //     if (Jdecisao2 > Mdecisao2) {
             //         printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib1], Jcarta, Mcarta);
