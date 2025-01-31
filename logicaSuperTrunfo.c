@@ -38,7 +38,7 @@ int main() {
 
     char pais1[30], Aestado[30], A1cidade[30], A2cidade[30], A3cidade[30], A4cidade[30], Bestado[30], B1cidade[30], B2cidade[30], B3cidade[30], B4cidade[30];
     int A1turist, A2turist, A3turist, A4turist, B1turist, B2turist, B3turist, B4turist;
-    int decisao, decisao2, cadastro, Mcarta, Jcarta, jogador, maquina;
+    int decisao, decisao2, atrib1, atrib2, cadastro, Mcarta, Jcarta, jogador, maquina;
     long int A1popul, A1area, A2popul, A2area, A3popul, A3area, A4popul, A4area, B1popul, B1area, B2popul, B2area, B3popul, B3area, B4popul, B4area;
     float A1pib, A1dens, A1pcap, A2pib, A2dens, A2pcap, A3pib, A3dens, A3pcap, A4pib, A4dens, A4pcap, B1pib, B1dens, B1pcap, B2pib, B2dens, B2pcap, B3pib, B3dens, B3pcap, B4pib, B4dens, B4pcap;
     float A1sup, A2sup, A3sup, A4sup, B1sup, B2sup, B3sup, B4sup;
@@ -52,6 +52,8 @@ int main() {
     maquina = 0;
     decisao = 0;
     decisao2 = 0;
+    atrib1 = 0;
+    atrib2 = 0;
 
     // Cadastro
     strcpy(pais1, "Brasil");
@@ -298,8 +300,8 @@ int main() {
         //limpando a tela
         system("clear");
 
-        printf("********VAMOS JOGAR********\n");
-        printf("***Apresento a sua Carta***\n\n");
+        printf("*********VAMOS JOGAR**********\n");
+        printf("***Apresento as suas Cartas***\n\n");
         printf("PAÍS: %s - %s\n", pais1, Aestado);
         printf("1. Carta A1 - Cidade: %s \n\tPopulação: %ld \tÁrea: %ld  \tPIB: %.2f  \tPontos T.: %d \tDensidade: %.2f \tPer Capita: %.2f\n", A1cidade, A1popul, A1area, A1pib, A1turist, A1dens, A1pcap);
         printf("2. Carta A2 - Cidade: %s \n\tPopulação: %ld \tÁrea: %ld  \tPIB: %.2f  \tPontos T.: %d \tDensidade: %.2f \tPer Capita: %.2f\n", A2cidade, A2popul, A2area, A2pib, A2turist, A2dens, A2pcap);
@@ -1914,11 +1916,70 @@ int main() {
         // printf("Carta B3 - Cidade: %s \t\tPopulação: %ld  \tÁrea: %ld   \tPIB: %.2f   \tPontos T.: %d \tDensidade: %.2f \tPer Capita: %.2f\n", B3cidade, B3popul, B3area, B3pib, B3turist, B3dens, B3pcap);
         // printf("Carta B4 - Cidade: %s \tPopulação: %ld  \tÁrea: %ld   \tPIB: %.2f   \tPontos T.: %d \tDensidade: %.2f \tPer Capita: %.2f\n", B4cidade, B4popul, B4area, B4pib, B4turist, B4dens, B4pcap);
         
+        char *cidades[4] = {A1cidade, A2cidade, A3cidade, A4cidade};
+        
         printf("\nEscolha a sua Carta: ");
         scanf("%d", &Jcarta);
-    
+        // if(Jcarta >=1 && Jcarta <=4 )
+        // {
+        //     printf("\nCarta A%d - Cidade: %s", Jcarta, cidades[Jcarta]);
+        // }else
+        //     printf("\nQue pena!\n");
+
         if (Jcarta > 0 && Jcarta < 5)
         {
+             //limpando a tela
+             system("clear");
+            
+            //Inicio
+            printf("\n#####Vamos escolher os atributos#####\n\n");
+            printf("\t\tMENU\n");
+            printf("1. População\n");
+            printf("2. Área\n");
+            printf("3. PIB\n");
+            printf("4. Pontos Turisticos\n");
+            printf("5. Densidade\n");
+            printf("6. Renda Per Capta\n");
+            printf("\nDigite atribudo deseja comparar primeiro: ");
+            scanf("%d", &atrib1);
+            if (atrib1 <= 0 || atrib1 >= 7)
+            {
+                printf("\nOpção invalida!!!!\n\n");
+                return 0 ;
+            }else {
+            
+                printf("\nDigite atribudo deseja comparar depois: ");
+                scanf("%d", &atrib2);
+            }
+            if (atrib2 <= 0 || atrib2 >= 7 || atrib1 == atrib2)
+            {
+                printf("\nOpção invalida!!!!\n\n");
+                return 0 ;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             switch (Jcarta)
             {
     //#############################################################################################################################################################################
