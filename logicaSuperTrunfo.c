@@ -2067,23 +2067,23 @@ int main() {
             if(atrib2 == 4 ){
                         //atributo 1 - Densidade
                 if (Jdecisao3 < Mdecisao3) {
-                    printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib2], Jcarta, Mcarta);
+                    printf("\n\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib2], Jcarta, Mcarta);
                     jogador ++;
                 } else if (Jdecisao3 > Mdecisao3) {
-                    printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib2], Jcarta, Mcarta);
+                    printf("\n\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib2], Jcarta, Mcarta);
                     maquina ++;
                 } else {
-                    printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib2], Jcarta, Mcarta);
+                    printf("\n\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib2], Jcarta, Mcarta);
                         }
             }else {
                 if (Jdecisao3 > Mdecisao3) {
-                    printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib2], Jcarta, Mcarta);
+                    printf("\n\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib2], Jcarta, Mcarta);
                     jogador ++;
                 } else if (Jdecisao3 < Mdecisao3) {
-                    printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib2], Jcarta, Mcarta);
+                    printf("\n\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib2], Jcarta, Mcarta);
                     maquina ++;
                 } else {
-                    printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib2], Jcarta, Mcarta);
+                    printf("\n\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib2], Jcarta, Mcarta);
                         }
 
 
