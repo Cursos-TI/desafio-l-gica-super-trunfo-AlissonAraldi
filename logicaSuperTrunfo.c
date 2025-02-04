@@ -342,7 +342,7 @@ int main() {
                         printf("\t**Populacao**\nVitoria - Carta A1 X Carta B1 - Derrota ", A1popul, B1popul);
                         jogador ++;
                     } else if (A1popul < B1popul) {
-                        printf("D\t**Populacao**\nerrota - Carta A1 X2 Carta B1 - Vitoria ", A1popul, B1popul);
+                        printf("\t**Populacao**\nerrota - Carta A1 X2 Carta B1 - Vitoria ", A1popul, B1popul);
                         maquina ++;
                     } else {
                         printf("\t**Populacao**\nEmpate - Carta A1 X2 Carta B1 - Empate ", A1popul, B1popul);
@@ -1998,26 +1998,26 @@ int main() {
             *Mpcap = Mcarta -1;  
             *Msup = Mcarta -1; 
             void **Mdecisao[7] = {(void **)Mturist, (void **)Mpopul, (void **)Marea, (void **)Mpib, (void **)Mdens, (void **)Mpcap, (void **)Msup};
-            char opcoes[6][30] = {"Populacão", "Área", "PIB", "Pontos Turisticos", "Densidade", "Renda Per Capta"};
+            char opcoes[7][30] = {"Populacão", "Área", "PIB", "Pontos Turisticos", "Densidade", "Renda Per Capta", "Super Poder"};
 
 
-            printf("\nCarta A%d - Cidade: %s\n ", Jcarta, Jcidades[Jcarta]);
-            printf("Turistas: %d\n", *Jturist[Jcarta]);
-            printf("População: %ld\n", *Jpopul[Jcarta]);
-            printf("Área: %ld\n", *Jarea[Jcarta]);
-            printf("PIB: %.2f\n", *Jpib[Jcarta]);
-            printf("Densidade: %.2f\n", *Jdens[Jcarta]);
-            printf("PIB per capita: %.2f\n", *Jpcap[Jcarta]);
-            printf("Suporte: %.2f\n\n\n\n\n", *Jsup[Jcarta]);
+            // printf("\nCarta A%d - Cidade: %s\n ", Jcarta, Jcidades[Jcarta]);
+            // printf("Turistas: %d\n", *Jturist[Jcarta]);
+            // printf("População: %ld\n", *Jpopul[Jcarta]);
+            // printf("Área: %ld\n", *Jarea[Jcarta]);
+            // printf("PIB: %.2f\n", *Jpib[Jcarta]);
+            // printf("Densidade: %.2f\n", *Jdens[Jcarta]);
+            // printf("PIB per capita: %.2f\n", *Jpcap[Jcarta]);
+            // printf("Suporte: %.2f\n\n\n\n\n", *Jsup[Jcarta]);
 
-            printf("\nCarta B%d - Cidade: %s\n ", Mcarta, Mcidades[Mcarta]);
-            printf("Turistas: %d\n", *Mturist[Mcarta]);
-            printf("População: %ld\n", *Mpopul[Mcarta]);
-            printf("Área: %ld\n", *Marea[Mcarta]);
-            printf("PIB: %.2f\n", *Mpib[Mcarta]);
-            printf("Densidade: %.2f\n", *Mdens[Mcarta]);
-            printf("PIB per capita: %.2f\n", *Mpcap[Mcarta]);
-            printf("Suporte: %.2f\n\n\n\n\n", *Msup[Mcarta]);
+            // printf("\nCarta B%d - Cidade: %s\n ", Mcarta, Mcidades[Mcarta]);
+            // printf("Turistas: %d\n", *Mturist[Mcarta]);
+            // printf("População: %ld\n", *Mpopul[Mcarta]);
+            // printf("Área: %ld\n", *Marea[Mcarta]);
+            // printf("PIB: %.2f\n", *Mpib[Mcarta]);
+            // printf("Densidade: %.2f\n", *Mdens[Mcarta]);
+            // printf("PIB per capita: %.2f\n", *Mpcap[Mcarta]);
+            // printf("Suporte: %.2f\n\n\n\n\n", *Msup[Mcarta]);
         
        
        
@@ -2030,84 +2030,99 @@ int main() {
             printf("*************************\n");
 
             printf("\n\t****** Jogador x Máquina ******\n");
-            printf("%s - Carta A%d x Carta B%d - %s\n", Jcidades[Jcarta -1], Jcarta, Mcarta,Mcidades[Mcarta]);
+            printf("%s -  Carta A%d x Carta B%d - %s\n", Jcidades[Jcarta -1], Jcarta, Mcarta, Mcidades[Mcarta]);
 
-            // void **Jdecisao2 = {(void **)Jdecisao[atrib1]};
-            // void **Mdecisao2 = {(void **)Mdecisao[atrib1]};
+            void **Jdecisao2 = {(void **)Jdecisao[atrib1]};
+            void **Mdecisao2 = {(void **)Mdecisao[atrib1]};
 
-            // if(atrib1 == 4 ){
-            //     //atributo 1 - Densidade
-            //     if (Jdecisao2 < Mdecisao2) {
-            //         printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib1], Jcarta, Mcarta);
-            //         jogador ++;
-            //     } else if (Jdecisao2 > Mdecisao2) {
-            //         printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib1], Jcarta, Mcarta);
-            //         maquina ++;
-            //     } else {
-            //         printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib1], Jcarta, Mcarta);
-            //             }
-            // }//else {
-            //     //Atributo 1 - Demais
-            //     if (Jdecisao2 > Mdecisao2) {
-            //         printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib1], Jcarta, Mcarta);
-            //         jogador ++;
-            //     } else if (Jdecisao2 < Mdecisao2) {
-            //         printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib1], Jcarta, Mcarta);
-            //         maquina ++;
-            //     } else {
-            //         printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib1], Jcarta, Mcarta);
-            //             }
+            if(atrib1 == 4 ){
+                //atributo 1 - Densidade
+                if (Jdecisao2 < Mdecisao2) {
+                    printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib1], Jcarta, Mcarta);
+                    jogador ++;
+                } else if (Jdecisao2 > Mdecisao2) {
+                    printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib1], Jcarta, Mcarta);
+                    maquina ++;
+                } else {
+                    printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib1], Jcarta, Mcarta);
+                        }
+            }else {
+                //Atributo 1 - Demais
+                if (Jdecisao2 > Mdecisao2) {
+                    printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib1], Jcarta, Mcarta);
+                    jogador ++;
+                } else if (Jdecisao2 < Mdecisao2) {
+                    printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib1], Jcarta, Mcarta);
+                    maquina ++;
+                } else {
+                    printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib1], Jcarta, Mcarta);
+                        }
 
 
-            // }
+            }
          
-            // void **Jdecisao2 = {(void **)Jdecisao[atrib2]};
-            // void **Mdecisao2 = {(void **)Mdecisao[atrib2]};
+            void **Jdecisao3 = {(void **)Jdecisao[atrib2]};
+            void **Mdecisao3 = {(void **)Mdecisao[atrib2]};
 
-            // if(atrib2 == 4 ){
-            //             //atributo 1 - Densidade
-            //     if (Jdecisao2 < Mdecisao2) {
-            //         printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib2], Jcarta, Mcarta);
-            //         jogador ++;
-            //     } else if (Jdecisao2 > Mdecisao2) {
-            //         printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib2], Jcarta, Mcarta);
-            //         maquina ++;
-            //     } else {
-            //         printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib2], Jcarta, Mcarta);
-            //             }
-            // }else {
-            //     if (Jdecisao2 > Mdecisao2) {
-            //         printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib2], Jcarta, Mcarta);
-            //         jogador ++;
-            //     } else if (Jdecisao2 < Mdecisao2) {
-            //         printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib2], Jcarta, Mcarta);
-            //         maquina ++;
-            //     } else {
-            //         printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib2], Jcarta, Mcarta);
-            //             }
+            if(atrib2 == 4 ){
+                        //atributo 1 - Densidade
+                if (Jdecisao3 < Mdecisao3) {
+                    printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib2], Jcarta, Mcarta);
+                    jogador ++;
+                } else if (Jdecisao3 > Mdecisao3) {
+                    printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib2], Jcarta, Mcarta);
+                    maquina ++;
+                } else {
+                    printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib2], Jcarta, Mcarta);
+                        }
+            }else {
+                if (Jdecisao3 > Mdecisao3) {
+                    printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[atrib2], Jcarta, Mcarta);
+                    jogador ++;
+                } else if (Jdecisao3 < Mdecisao3) {
+                    printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[atrib2], Jcarta, Mcarta);
+                    maquina ++;
+                } else {
+                    printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[atrib2], Jcarta, Mcarta);
+                        }
 
 
-            // }
-         
-         
-         
-            // if(Jcarta >=1 && Jcarta <=4 )
-            // {
-            //     printf("\nCarta A%d - Cidade: %s", Jcarta, Jcidades[Jcarta]);
-            // }else
-            //     printf("\nQue pena!\n");
+            }
 
-            //return 0;
+            printf("\n\n***CONTANDO OS PONTOS***");
+            printf("\nJogador %d x %d Maquina\n\n", jogador, maquina);
+            if (jogador > maquina){
+                printf("VOCE GANHOU!\n\n");
+            }else if (jogador < maquina){
+                printf("VOCE PERDEU!\n\n");
+            }else {
+                printf("EMPATE!!\n\n");
+                printf("Vamos ao Desimpate usandooooooo.... ");
+                void **Jdecisao4 = {(void **)Jdecisao[6]};
+                void **Mdecisao4 = {(void **)Mdecisao[6]};
 
+                //atributo 6 - super poder
+                    if (Jdecisao4 < Mdecisao4) {
+                        printf("\t**%s**\nVitoria - Carta A%d X Carta B%d - Derrota ", opcoes[6], Jcarta, Mcarta);
+                        printf("\n\n\tVOCE VENCEU!!!!\n\n");
+                    } else if (Jdecisao4 > Mdecisao4) {
+                        printf("\t**%s**\nDerrota - Carta A%d X Carta B%d - Vitoria ", opcoes[6], Jcarta, Mcarta);
+                        printf("\n\n\tVOCE PERDEU!!!!\n\n");
+                    } else {
+                        printf("\t**%s**\nEmpate - Carta A%d X Carta B%d - Empate ", opcoes[6], Jcarta, Mcarta);
+                        printf("\n\n\t2EMPATE!!!!\n\n");
+                            }
+                
+            }
 
 
     }
-    else
+    else //*/
         {
         printf("Opção Invalida! Comece novamente!! \n\n");
         }
     }
 
-
+    }
     return 0;
 }
